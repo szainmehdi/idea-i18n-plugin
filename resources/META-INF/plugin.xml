@@ -1,0 +1,29 @@
+<idea-plugin version="2">
+  <id>me.zain.idea.plugins.i18n</id>
+  <name>i18n Enhanced Support</name>
+  <version>1.0</version>
+  <vendor email="szainmehdi@gmail.com">Zain Mehdi</vendor>
+
+  <description><![CDATA[
+      This plugin allows jumping from <pre>tl()</pre> calls straight to the translation definition.
+    ]]></description>
+
+  <change-notes><![CDATA[
+      <ul>
+        <li>v1.0 - Initial release with support for JavaScript and PHP tl() calls.</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="141.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+      <psi.referenceContributor implementation="me.zain.idea.plugins.i18n.TranslationReferenceContributor"/>
+  </extensions>
+
+</idea-plugin>
